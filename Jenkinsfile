@@ -17,15 +17,15 @@ pipeline{
                 }
             }
         }
-        stage('Push image to dockerhub'){
-            steps{
-                script{
-                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
-                        bat 'docker login -u arkagc -p ${dockerhubpwd}'
-                    }
-                    bat 'docker push devops-integration'
-                }
-            }
-        }
+//         stage('Push image to dockerhub'){
+//             steps{
+//                 script{
+//                     withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+//                         bat 'docker login -u arkagc -p ${dockerhubpwd}'
+//                     }
+//                     bat 'docker push devops-integration'
+//                 }
+//             }
+//         }
     }
 }
